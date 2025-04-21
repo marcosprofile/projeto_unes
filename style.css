@@ -10,8 +10,8 @@
   --primary-hover: #383F5D;
   --secondary: #6D78A8;
   --secondary-hover: #8C95BA;
-  --text: #303036;
-  --paragraph: #898995;
+  --text: #515567;
+  --paragraph: #989CAE;
   --border: #E4E7EF;
 }
 
@@ -127,6 +127,7 @@ main {
         padding: .5rem;
         border: 1px solid var(--border);
         width: 100%;
+        color: var(--text);
 
         &::placeholder {
           opacity: .5;
