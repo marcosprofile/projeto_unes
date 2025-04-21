@@ -10,7 +10,6 @@
   --primary-hover: #383F5D;
   --secondary: #6D78A8;
   --secondary-hover: #8C95BA;
-  --bg: #EFEFEF;
   --text: #303036;
   --paragraph: #898995;
   --border: #E4E7EF;
@@ -34,7 +33,6 @@ header {
   position: sticky;
   top: 0;
   background-color: #FFF;
-  border-bottom: 1px solid var(--border);
 
   img {
     width: 160px;
@@ -163,11 +161,12 @@ main {
 }
 
 footer {
-  background-color: var(--primary);
+  background-color: var(--primary-hover);
   margin: 0 auto;
   text-align: center;
   padding: 1rem 0;
   color: var(--border);
+  box-shadow: 0 4px 1px var(--primary-hover);
 
   .footer {
     display: grid;
@@ -197,6 +196,10 @@ footer {
 }
 
 @media (max-width: 1200px) {
+  main {
+    min-height: calc(100vh - 381px);
+  }
+
   footer {
     .footer {
       padding: 0 1rem 3rem 1rem;
