@@ -18,8 +18,17 @@
 body {
   position: relative;
   height: 100vh;
-  border-top: 8px solid var(--secondary);
   color: var(--text);
+}
+
+.line-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 8px;
+  background-color: var(--primary);
 }
 
 header {
@@ -60,7 +69,7 @@ header {
           transition: all .2s linear;
 
           &:hover {
-            background-color: var(--primary-hover);
+            background-color: var(--primary);
             color: #FFF;
           }
         }
@@ -167,7 +176,7 @@ footer {
   text-align: center;
   padding: 1rem 0;
   color: var(--border);
-  box-shadow: 0 4px 1px var(--primary-hover);
+  box-shadow: 0 40px 0 var(--primary-hover);
 
   .footer {
     display: grid;
