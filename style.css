@@ -16,6 +16,8 @@
 }
 
 body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   position: relative;
   height: 100vh;
   color: var(--text);
@@ -82,7 +84,6 @@ main {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2.5rem 1rem;
-  min-height: calc(100vh - 306px);
 
   section {
     display: flex;
@@ -173,11 +174,11 @@ main {
 
 footer {
   background-color: var(--primary-hover);
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   padding: 1rem 0;
   color: var(--border);
-  box-shadow: 0 40px 0 var(--primary-hover);
 
   .footer {
     display: grid;
@@ -206,23 +207,6 @@ footer {
   }
 }
 
-@media (max-width: 1200px) {
-  main {
-    min-height: calc(100vh - 381px);
-  }
-
-  footer {
-    .footer {
-      padding: 0 1rem 3rem 1rem;
-      grid-template-columns: repeat(2, 1fr);
-
-      .column {
-        padding: 0;
-      }
-    }
-  }
-}
-
 @media (max-width: 768px) {
   header {
     img {
@@ -241,8 +225,6 @@ footer {
   }
 
   main {
-    min-height: unset;
-
     section {
       form {
         .inputs {
