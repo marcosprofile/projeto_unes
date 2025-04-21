@@ -33,6 +33,7 @@ header {
   position: sticky;
   top: 0;
   background-color: #FFF;
+  z-index: 2;
 
   img {
     width: 160px;
@@ -257,5 +258,12 @@ footer {
         }
       }
     }
+  }
+}
+
+@media (max-width: 420px) {
+  header {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
