@@ -20,7 +20,6 @@ body {
   position: relative;
   height: 100vh;
   border-top: 8px solid var(--secondary);
-  padding: 0 1rem;
   color: var(--text);
 }
 
@@ -28,7 +27,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 0;
+  padding: 1.5rem 1rem;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   position: sticky;
@@ -73,8 +73,8 @@ header {
 main {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2.5rem 0;
-  min-height: 86vh;
+  padding: 2.5rem 1rem;
+  min-height: calc(100vh - 306px);
 
   section {
     display: flex;
@@ -90,9 +90,10 @@ main {
       line-height: 24px;
     }
 
-    ol {
+    ul, ol {
       margin-left: 1.25rem;
       line-height: 24px;
+      color: var(--paragraph);
     }
 
     hr {
@@ -162,17 +163,54 @@ main {
 }
 
 footer {
-  max-width: 1400px;
+  background-color: var(--primary);
   margin: 0 auto;
   text-align: center;
   padding: 1rem 0;
-  color: var(--text);
+  color: var(--border);
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem 0 1rem;
+
+    .column {
+      text-align: left;
+      line-height: 24px;
+      font-size: .875rem;
+      padding: 1rem 0 4rem 0;
+      
+      .title {
+        font-size: 1.125rem;
+        line-height: 28px;
+        color: #FFF;
+      }
+
+      a {
+        color: #FFF;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  footer {
+    .footer {
+      padding: 0 1rem 3rem 1rem;
+      grid-template-columns: repeat(2, 1fr);
+
+      .column {
+        padding: 0;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
   header {
-    padding: 1.5rem 1rem;
-
     img {
       width: 100px;
     }
@@ -189,10 +227,30 @@ footer {
   }
 
   main {
+    min-height: unset;
+
     section {
       form {
         .inputs {
           flex-direction: column;
+        }
+      }
+    }
+  }
+
+  footer {
+    .footer {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0 1rem 3rem 1rem;
+
+      .column {
+        padding: 0;
+
+        .title {
+          font-size: .875rem;
+          line-height: 24px;
         }
       }
     }
